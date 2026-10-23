@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Separate profiles for feeding, routines, supplies, quirks and emergency contacts. Print a sheet or save it as an HTML file."
+    />
+    <meta name="color-scheme" content="light" />
+    <title>Pet sitter handoff</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to workspace</a>
+    <header class="masthead">
+      <div class="eyebrow">Logan Pendragon Multiverse · local-first tools</div>
+      <h1>Pet sitter handoff</h1>
+      <p>Leave clear, owner-supplied instructions.</p>
+      <p>
+        Separate profiles for feeding, routines, supplies, quirks and emergency
+        contacts. Print a sheet or save it as an HTML file.
+      </p>
+      <div class="version">Version 1.0.0 · No accounts · No uploads</div>
+    </header>
+    <main id="main" class="shell">
+      <div class="toolbar">
+        <button id="backup" type="button" class="secondary">
+          Download backup</button
+        ><label class="file-button"
+          >Import backup<input
+            id="import"
+            type="file"
+            accept="application/json,.json"
+            aria-label="Import backup JSON" /></label
+        ><button id="recover" type="button" class="danger" hidden>
+          Download original recovery bytes</button
+        ><button id="example" type="button" class="secondary">
+          Load example</button
+        ><button id="print" type="button" class="secondary">
+          Print / save PDF</button
+        ><button id="undo" type="button" class="secondary" hidden>
+          Undo last deletion / reset</button
+        ><span id="unsaved" class="status" role="status">Saved locally</span>
+      </div>
+      <div id="message" class="notice" role="alert" hidden></div>
+      <div class="layout">
+        <aside class="panel sidebar">
+          <h2>Pet profiles</h2>
+          <label class="search"
+            ><span class="hint">Search names and contents</span
+            ><input
+              id="search"
+              type="search"
+              placeholder="Search saved records"
+              aria-label="Search saved records" /></label
+          ><button id="new" type="button">Add pet</button>
+          <div id="records" class="records"></div>
+          <label class="field"
+            ><span>Print / sheet export includes</span
+            ><select id="print-scope">
+              <option value="all">All saved profiles</option>
+              <option value="selected">Selected profile only</option>
+            </select></label
+          ><button id="export-sheet" type="button" class="secondary">
+            Export handoff HTML
+          </button>
+        </aside>
+        <div>
+          <section class="panel">
+            <div id="editor"></div>
+            <div id="preview" class="preview"></div>
+          </section>
+        </div>
+      </div>
+      <div id="print-sheet" class="print-sheet"></div>
+      <footer class="footer">
+        <p>
+          Your data stays in this browser. Browser storage can be cleared,
+          blocked or run out of space, and private browsing may discard it. It
+          does not sync across devices. Download backups regularly and before
+          changing browsers. Backups contain your private notes and photos. This
+          tool makes no network requests.
+        </p>
+        <p>
+          MIT licensed ·
+          <a
+            href="https://github.com/loganpendragonmultiverse/pet-sitter-handoff"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Source and documentation</a
+          >
+        </p>
+      </footer>
+    </main>
+    <dialog id="import-dialog" aria-labelledby="import-title">
+      <h2 id="import-title">Review backup replacement</h2>
+      <p id="import-summary"></p>
+      <p id="import-error" class="notice error" role="alert" hidden></p>
+      <p>
+        Nothing changes until you apply this replacement. Cancel keeps existing
+        data untouched.
+      </p>
+      <label class="confirm"
+        ><input id="replace-confirm" type="checkbox" /><span
+          >I understand this replaces all saved records in this browser.</span
+        ></label
+      >
+      <div class="actions">
+        <button id="apply-import" type="button">Apply replacement</button
+        ><button id="cancel-import" type="button" class="secondary">
+          Cancel import
+        </button>
+      </div>
+    </dialog>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

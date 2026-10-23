@@ -1,0 +1,20 @@
+{
+  "app": "pet-sitter-handoff",
+  "version": 1,
+  "data": {
+    "pets": [
+      {
+        "id": "example-pet",
+        "name": "Miso",
+        "species": "Dog",
+        "feeding": "Owner example: one measured scoop at 08:00 and 18:00. Scoop is inside the food tub.",
+        "walks": "Morning and evening walks. Harness hangs by the door.",
+        "supplies": "Food in the pantry. Lead, waste bags and towel by the front door.",
+        "quirks": "Wait at the door before opening it. Enjoys a quiet place to settle.",
+        "contacts": "Replace this example with the owner’s verified contacts before using the sheet.",
+        "owner": "Example profile only. Review every instruction with the owner.",
+        "photo": null
+      }
+    ]
+  }
+}

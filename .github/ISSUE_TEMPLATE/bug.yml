@@ -1,0 +1,10 @@
+name: Bug report
+description: What happened, what did you expect, and how can we reproduce it with synthetic data?
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Do not include private backups or photos.
+    validations:
+      required: true

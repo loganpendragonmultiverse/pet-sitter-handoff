@@ -1,0 +1,10 @@
+name: Feature request
+description: What task would this help you complete within the documented scope?
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Do not include private backups or photos.
+    validations:
+      required: true

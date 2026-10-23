@@ -1,0 +1,19 @@
+{
+  "name": "pet-sitter-handoff",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Separate profiles for feeding, routines, supplies, quirks and emergency contacts. Print a sheet or save it as an HTML file.",
+  "scripts": {
+    "test": "node --test test/core.test.js test/vault.test.js",
+    "check": "node scripts/check.mjs && prettier --check .",
+    "build": "node scripts/build.mjs",
+    "test:browser": "playwright test",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "prettier": "3.9.10"
+  }
+}
