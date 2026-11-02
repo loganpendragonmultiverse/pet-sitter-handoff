@@ -6,7 +6,7 @@
   "license": "MIT",
   "description": "Separate profiles for feeding, routines, supplies, quirks and emergency contacts. Print a sheet or save it as an HTML file.",
   "scripts": {
-    "test": "node --test test/core.test.js test/vault.test.js",
+    "test": "node --test test/core.test.js test/vault.test.js scripts/static-test-server.test.mjs",
     "check": "node scripts/check.mjs && prettier --check .",
     "build": "node scripts/build.mjs",
     "test:browser": "playwright test",
